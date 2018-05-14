@@ -1,3 +1,10 @@
+# Adapted from Udacity CS101 Intro to Computer City online course,
+# Class 5 - How to Repeat
+# Lesson 30 - Quiz: Print All Links
+# Found at: https://classroom.udacity.com/courses/cs101/lessons/48753036/concepts/487275580923
+# Changed the get_page() given in the lesson as it didn't seem to work well with Python 3
+# (original version of the method would return bytecode, not strings)
+
 # opens an url into an utf-8 decoded text
 def get_page(url):
     import urllib.request

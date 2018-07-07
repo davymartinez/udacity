@@ -37,4 +37,4 @@ def print_all_links(page):
         else:
             break
 
-print_all_links(get_page('https://docs.python.org/'))
+print_all_links(get_page('https://github.com/'))

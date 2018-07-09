@@ -37,4 +37,4 @@ def print_all_links(page):
         else:
             break
 
-print_all_links(get_page('https://github.com/'))
+print_all_links(get_page('https://udacity.github.io/cs101x/index.html'))

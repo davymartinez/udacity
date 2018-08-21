@@ -46,17 +46,22 @@ def print_abacus(value):
     row_array = []
 
     while divisor < value:
+        # perform mod division of the input value and then divide the result in
+        # increments of 10 to "decompose" the value into its single digits,
+        # which will be stored into a list -- the loop stops once the divisor
+        # surpasses the input value
         row = int((value % factor) / divisor)
         factor = factor * 10
         divisor = divisor * 10
         row_array.append(row)
 
-    while len(row_array) < 10:
-        row_array.append(0)
+    while len(row_array) < 10:  # fill out the list with leading zeroes to print
+        row_array.append(0)     # out the "unused" abacus rows
 
-    row_array.reverse()
-
+    row_array.reverse() # the original list gets the values input in reverse
+                        # order, so we sort it back to the needed order of rows
     for i in row_array:
+        # the actual abacus printing pattern:
         if i <= 5:
             print('|' + ('0' * 5) + ('*' * (5-i)) + blank + ('*' * i) + '|')
         else:

@@ -17,8 +17,16 @@ def is_identity_matrix(matrix):
             return False
         # Check if main diagonal elements == 1
         for j in range(matrix_length):
-            if ((i == j) and (matrix[i][j] != 1)) or ((i != j) and (matrix[i][j] != 0)):
+            # Let's try to "pythonize" this -- original version:
+            # if ((i == j) and (matrix[i][j] != 1)) or ((i != j) and (matrix[i][j] != 0)):
+            #     return False
+            # pythonic version:
+            eq_ind = i == j
+            ind_not_one = matrix[i][j] != 1
+            ind_not_zero = matrix[i][j] != 0
+            if (eq_ind and ind_not_one) or ((not eq_ind) and ind_not_zero):
                 return False
+
     return True
 
 # Test Cases:

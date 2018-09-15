@@ -15,7 +15,6 @@
 # the total number of characters in the message, n.
 
 def freq_analysis(message):
-    msg_len = len(message)
     alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     freq_list = []
 
@@ -24,11 +23,9 @@ def freq_analysis(message):
         freq_list.append(0.0)
 
     for letter in message:
-        ltr_count = message.count(letter)
-        norm_freq = ltr_count / msg_len
         index = alphabet.index(letter)  # keep track of each letter's position
         if letter == alphabet[index] and freq_list[index] == 0.0: # in the list
-            freq_list[index] = norm_freq
+            freq_list[index] = message.count(letter) / len(message)
 
     return freq_list
 
